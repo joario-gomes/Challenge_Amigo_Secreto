@@ -8,15 +8,13 @@ function sortearAmigo(){
     listaAmigoSorteado.push(numeroSorteado); //Falta colocar os já sorteados para que não seja sorteados novamente.
     let sorteado = document.getElementById('resultado');
     sorteado.innerHTML = amigoSecreto[numeroSorteado];
-    exibirTextoNaTela('listaAmigos', '');
+    ocultarElemento('listaAmigos');
     console.log(numeroSorteado);
-
 }
 
 function adicionarAmigo(){
     let nome = document.querySelector('input').value.trim();//trim() remove os espaços apos o nome
-    
-    //Testando se o campo esta vazio
+       //Testando se o campo esta vazio
     if(nome ===''){
         alert('Por favor, insira um nome valido.');
         return;
@@ -51,6 +49,12 @@ function exibirTextoNaTela(tag, texto){
     let campo = document.querySelector(tag);
     campo.innerHTML = texto;
 }
+
+function ocultarElemento(tag){
+    let campo = document.getElementById(tag);
+    campo.style.display = "none";
+}
+
 /*
 //Apagar essa função
 function converteMaiuscula(nome) {
