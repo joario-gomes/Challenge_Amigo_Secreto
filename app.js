@@ -8,6 +8,7 @@ function sortearAmigo(){
     listaAmigoSorteado.push(numeroSorteado); //Falta colocar os já sorteados para que não seja sorteados novamente.
     let sorteado = document.getElementById('resultado');
     sorteado.innerHTML = amigoSecreto[numeroSorteado];
+    exibirTextoNaTela('listaAmigos', '');
     console.log(numeroSorteado);
 
 }
@@ -45,12 +46,12 @@ function atualizarLista() {
     lista.innerHTML = amigoSecreto.map(nome => `<p>${nome}</p>`).join("");
 }
 
-/*
+
 function exibirTextoNaTela(tag, texto){
     let campo = document.querySelector(tag);
     campo.innerHTML = texto;
 }
-
+/*
 //Apagar essa função
 function converteMaiuscula(nome) {
     let nomeMaiusculo = nome.toUpperCase();
