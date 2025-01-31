@@ -3,7 +3,12 @@ let amigoSecreto = [];
 let listaAmigoSorteado = [];
 
 function sortearAmigo(){
-    ///amigoSecreto = parseInt(Math.random() * numeroLimite + 1);
+    let numeroLimite = amigoSecreto.length-1;
+    let numeroSorteado = parseInt(Math.random() * (numeroLimite + 1));
+    listaAmigoSorteado.push(numeroSorteado); //Falta colocar os já sorteados para que não seja sorteados novamente.
+    let sorteado = document.getElementById('resultado');
+    sorteado.innerHTML = amigoSecreto[numeroSorteado];
+    console.log(numeroSorteado);
 
 }
 
@@ -34,6 +39,13 @@ function limparCampo(){
     amigo.value = "";
 }
 
+
+function atualizarLista() {
+    let lista = document.getElementById('listaAmigos');
+    lista.innerHTML = amigoSecreto.map(nome => `<p>${nome}</p>`).join("");
+}
+
+/*
 function exibirTextoNaTela(tag, texto){
     let campo = document.querySelector(tag);
     campo.innerHTML = texto;
@@ -44,8 +56,4 @@ function converteMaiuscula(nome) {
     let nomeMaiusculo = nome.toUpperCase();
     return nomeMaiusculo;
 }
-
-function atualizarLista() {
-    let lista = document.getElementById('listaAmigos');
-    lista.innerHTML = amigoSecreto.map(nome => `<p>${nome}</p>`).join("");
-}
+*/
