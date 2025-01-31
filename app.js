@@ -12,7 +12,8 @@ function sortearAmigo(){
     if(listaAmigoSorteado.length == (amigoSecreto.length)){
         alert('Todos os amigos foram sorteados');
         amigoSecreto = [];
-        listaAmigoSorteado = [];        
+        listaAmigoSorteado = [];
+        window.location.reload();        
     }else{
         if(listaAmigoSorteado.includes(amigoSecreto[numeroSorteado])){
             sortearAmigo();
