@@ -45,6 +45,7 @@ function converteMaiuscula(nome) {
     return nomeMaiusculo;
 }
 
-function atualizarLista(){
-
+function atualizarLista() {
+    let lista = document.getElementById('listaAmigos');
+    lista.innerHTML = amigoSecreto.map(nome => `<p>${nome}</p>`).join("");
 }
