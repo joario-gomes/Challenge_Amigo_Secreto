@@ -1,11 +1,12 @@
 //O principal objetivo deste desafio é fortalecer suas habilidades em lógica de programação. Aqui você deverá desenvolver a lógica para resolver o problema.
 let amigoSecreto = [];
 let listaAmigoSorteado = [];
-let numeroLimite = amigoSecreto.length-1;
+let numeroLimite = amigoSecreto.length;
+
+console.log(sortearNumero());
 
 function sortearAmigo(){
-    let numeroSorteado = parseInt(Math.random() * (numeroLimite + 1));
-
+    let numeroSorteado = sortearNumero();
     if(listaAmigoSorteado.length == (amigoSecreto.length)){
         alert('Todos os amigos foram sorteados');
         amigoSecreto = [];
@@ -13,7 +14,7 @@ function sortearAmigo(){
         if(listaAmigoSorteado.includes(amigoSecreto[numeroSorteado])){
             sortearAmigo();
         }else{
-            //let numeroSorteado = parseInt(Math.random() * (numeroLimite + 1));
+            //numeroSorteado = sortearNumero();
             let nome = amigoSecreto[numeroSorteado];
             listaAmigoSorteado.push(nome); //Falta colocar os já sorteados para que não seja sorteados novamente.
             let sorteado = document.getElementById('resultado');
@@ -67,6 +68,11 @@ function exibirTextoNaTela(tag, texto){
 function ocultarElemento(tag){
     let campo = document.getElementById(tag);
     campo.style.display = "none";
+}
+
+function sortearNumero(){
+    let numeroSorteado = parseInt(Math.random() * numeroLimite+1);
+    return numeroSorteado;
 }
 
 /*
