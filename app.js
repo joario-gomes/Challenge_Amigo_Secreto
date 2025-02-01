@@ -2,11 +2,13 @@
 let amigoSecreto = [];
 let listaAmigoSorteado = [];
 
-console.log(sortearNumero());
-
 function sortearAmigo(){
     let numeroLimite = amigoSecreto.length-1;
     let numeroSorteado = parseInt(Math.random() * (numeroLimite + 1));
+    if (amigoSecreto.length === 0) {
+        alert('Adicione amigos antes de sortear.');
+        return;
+    }
     if(listaAmigoSorteado.length == (amigoSecreto.length)){
         alert('Todos os amigos foram sorteados');
         amigoSecreto = [];
@@ -30,9 +32,9 @@ function sortearAmigo(){
 
 function adicionarAmigo(){
     let nome = document.querySelector('input').value.trim();//trim() remove os espaços apos o nome
-       //Testando se o campo esta vazio
+       //Testando se o campo está vazio
     if(nome ===''){
-        alert('Por favor, insira um nome valido.');
+        alert('Por favor, insira um nome válido.');
         return;
     }
 
@@ -40,7 +42,7 @@ function adicionarAmigo(){
 
     //Testando se o nome já esta na lista
     if(amigoSecreto.includes(amigo)){
-        alert(`O nome ${amigo} já esta na lista! Ensira outro nome.`);
+        alert(`O nome ${amigo} já esta na lista! Insira outro nome..`);
     }else{
         amigoSecreto.push(amigo);
     }
